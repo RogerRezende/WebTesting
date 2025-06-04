@@ -19,6 +19,7 @@ Fechar o navegador
     Capture Page Screenshot
     Close Browser
 
+# Procedural steps
 Acessar a home page do site amazon.com.br
     Go To                            url=${URL}
     Sleep                            time_=15s
@@ -48,3 +49,32 @@ Clicar no botão de pesquisa
 
 Verificar o resultado da pesquisa se está listando o produto "${PESQUISA}"
     Page Should Contain              text=${PESQUISA}
+
+Verificar se o título da página exibe o conteúdo da pesquisa "${PESQUISA}"
+    Page Should Contain              text=Amazon.com.br : ${PESQUISA}
+
+# Gherkin steps
+Dado que estou na home page da amazon.com.br
+    Acessar a home page do site amazon.com.br
+
+Quando acessar o menu "Eletrônicos"
+    Entra no menu "Eletrônicos"
+
+Então o título da página deve ficar "Eletrônicos e Tecnologia | Amazon.com.br"
+    Verificar se o título da página fica "Eletrônicos e Tecnologia | Amazon.com.br"
+
+E o texto "Eletrônicos e Tecnologia" deve ser exibido na página
+    Verificar se aparece a frase "Eletrônicos e Tecnologia"
+
+E a categoria "Computadores e Informática" deve ser exibida na página
+    Verificar se aparece a categoria "Computadores e Informática"
+
+Quando pesquisar pelo produto "Xbox Series S"
+    Digitar o nome do produto "Xbox Series S" no campo de pesquisa
+    Clicar no botão de pesquisa
+
+Então o título da página deve ficar "Amazon.com.br : Xbox Series S"
+    Verificar se o título da página fica "Amazon.com.br : Xbox Series S"
+
+E um produto da linha "Console Xbox Series S" deve ser mostrado na página
+    Verificar o resultado da pesquisa se está listando o produto "Console Xbox Series S"

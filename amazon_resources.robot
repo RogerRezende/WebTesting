@@ -14,6 +14,9 @@ ${BOTAO_ADICIONAR_CARRINHO}          add-to-cart-button-ubb
 ${HEADER_PAGINA_PRODUTO_ADICIONADO}  Adicionado ao carrinho
 ${CARRINHO}                          nav-cart-count
 ${TITULO_PAGINA_CARRINHO}            Carrinho de compras da Amazon.com
+${BOTAO_IR_PARA_CARRINHO_INTERNO}    //span[@id='sw-gtc']
+${HEADER_CARRINHO}                   Carrinho de compras
+${EXCLUIR_PRODUTO_CARRINHO}          //span[@class='a-size-small sc-action-delete-active']
 
 *** Keywords ***
 Abrir o navegador
@@ -67,6 +70,15 @@ Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
     Wait Until Page Contains         text=${HEADER_PAGINA_PRODUTO_ADICIONADO}
     Element Should Contain           locator=${CARRINHO}    expected=1
     Title Should Be                  title=${TITULO_PAGINA_CARRINHO}
+
+Remover o produto "Console Xbox Series S" do carrinho
+    Wait Until Element Is Visible    locator=${BOTAO_IR_PARA_CARRINHO_INTERNO}
+    Click Element                    locator=${BOTAO_IR_PARA_CARRINHO_INTERNO}
+    Wait Until Page Contains         text=${HEADER_CARRINHO}
+    Click Element                    locator=${EXCLUIR_PRODUTO_CARRINHO}
+
+Verificar se o carrinho fica vazio
+    Element Should Contain           locator=${CARRINHO}    expected=0
 
 # Gherkin steps
 Dado que estou na home page da amazon.com.br

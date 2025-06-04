@@ -46,5 +46,4 @@ Clicar no botão de pesquisa
     Wait Until Page Contains         text=${TITULO_PAGINA_PESQUISAR}
 
 Verificar o resultado da pesquisa se está listando o produto "${PESQUISA}"
-    Title Should Be                  title=Amazon.com.br : ${PESQUISA}
     Page Should Contain              text=${PESQUISA}

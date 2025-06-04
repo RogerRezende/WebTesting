@@ -9,6 +9,11 @@ ${HEADER_ELETRONICOS}                //div[@class='_Y29ud_bxcGridText_3AiaV _Y29
 ${CAMPO_PESQUISA}                    twotabsearchtextbox
 ${BOTAO_PESQUISAR}                   nav-search-submit-button
 ${TITULO_PAGINA_PESQUISAR}           Resultados
+${TITULO_PDP}                        productTitle
+${BOTAO_ADICIONAR_CARRINHO}          add-to-cart-button-ubb
+${HEADER_PAGINA_PRODUTO_ADICIONADO}  Adicionado ao carrinho
+${CARRINHO}                          nav-cart-count
+${TITULO_PAGINA_CARRINHO}            Carrinho de compras da Amazon.com
 
 *** Keywords ***
 Abrir o navegador
@@ -52,6 +57,16 @@ Verificar o resultado da pesquisa se está listando o produto "${PESQUISA}"
 
 Verificar se o título da página exibe o conteúdo da pesquisa "${PESQUISA}"
     Page Should Contain              text=Amazon.com.br : ${PESQUISA}
+
+Adicionar o produto "${PESQUISA}" no carrinho
+    Click Element                    locator=//span[normalize-space()='${PESQUISA}']
+    Wait Until Element Is Visible    locator=${TITULO_PDP}
+    Click Button                     locator=${BOTAO_ADICIONAR_CARRINHO}
+
+Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
+    Wait Until Page Contains         text=${HEADER_PAGINA_PRODUTO_ADICIONADO}
+    Element Should Contain           locator=${CARRINHO}    expected=1
+    Title Should Be                  title=${TITULO_PAGINA_CARRINHO}
 
 # Gherkin steps
 Dado que estou na home page da amazon.com.br

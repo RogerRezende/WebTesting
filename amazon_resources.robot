@@ -105,3 +105,12 @@ Então o título da página deve ficar "Amazon.com.br : Xbox Series S"
 
 E um produto da linha "Console Xbox Series S" deve ser mostrado na página
     Verificar o resultado da pesquisa se está listando o produto "Console Xbox Series S"
+
+Quando adicionar o produto "Console Xbox Series S" no carrinho
+    Digitar o nome do produto "Xbox Series S" no campo de pesquisa
+    Clicar no botão de pesquisa
+    Verificar o resultado da pesquisa se está listando o produto "Console Xbox Series S"
+    Adicionar o produto "Console Xbox Series S" no carrinho
+
+Então o produto "Console Xbox Series S" deve ser mostrado no carrinho
+    Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso

@@ -1,0 +1,11 @@
+# ignore the file log.html
+log.html
+
+# ignore the file output.xml
+output.xml
+
+# ignore the file report.html
+report.html
+
+# ignore all files .png
+*.png

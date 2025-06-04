@@ -6,3 +6,6 @@ output.xml
 
 # ignore the file report.html
 report.html
+
+# ignore all files .png
+*.png

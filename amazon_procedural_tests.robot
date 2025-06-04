@@ -18,7 +18,7 @@ Caso de Teste 01 - Acesso ao menu "Eletrônicos"
 Caso de Teste 02 - Pesquisa de um Produto
     [Documentation]  Esse teste verifica a busca de um produto do site da Amazon.com.br
     [Tags]           busca_produtos  lista_busca
-    # Acessar a home page do site amazon.com.br
-    # Digitar o nome do produto "Xbox Series S" no campo de pesquisa
-    # Clicar no botão de pesquisa
-    # Verificar o resultado da pesquisa se está listando o produto pesquisado
+    Acessar a home page do site amazon.com.br
+    Digitar o nome do produto "Xbox Series S" no campo de pesquisa
+    Clicar no botão de pesquisa
+    Verificar o resultado da pesquisa se está listando o produto "Xbox Series S"

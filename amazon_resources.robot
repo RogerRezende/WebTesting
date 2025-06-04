@@ -2,6 +2,7 @@
 Library  SeleniumLibrary
 
 *** Variables ***
+${BROWSER}                           chrome
 ${URL}                               https://www.amazon.com.br/
 ${MENU_TODOS}                        //span[@class='hm-icon-label']
 ${HEADER_ELETRONICOS}                //div[@class='_Y29ud_bxcGridText_3AiaV _Y29ud_cgTextLeft_3L3pI _Y29ud_bxcGridTextLight_f2KTn']//span[contains(text(),'Eletrônicos e Tecnologia')]
@@ -11,7 +12,7 @@ ${TITULO_PAGINA_PESQUISAR}           Resultados
 
 *** Keywords ***
 Abrir o navegador
-    Open Browser                     browser=chrome  options=add_experimental_option("detach", True)
+    Open Browser                     browser=${BROWSER}  options=add_experimental_option("detach", True)
     Maximize Browser Window
 
 Fechar o navegador

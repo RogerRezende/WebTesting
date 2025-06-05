@@ -92,3 +92,9 @@ Realizar login com o usuário
     ...                                        json=${body}
     ...                                        expected_status=${status_code_desejado}
     Log                                        ${resposta.json()}
+    Set Test Variable                          ${RESPOSTA_LOGIN}         ${resposta.json()}
+
+Conferir se o login ocorreu com sucesso
+    Log                                        ${RESPOSTA_LOGIN}
+    Dictionary Should Contain Item             ${RESPOSTA_LOGIN}         message                   Login realizado com sucesso
+    Dictionary Should Contain Key              ${RESPOSTA_LOGIN}         authorization

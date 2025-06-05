@@ -32,6 +32,9 @@ Cadastrar o usuário criado na ServeRest
     ...                                        json=${body}
     ...                                        expected_status=${status_code_desejado}
     Log                                        ${resposta.json()}
+    Set Test Variable                          ${NOME_USUARIO}           ${body["nome"]}
+    Set Test Variable                          ${PASSWORD_USUARIO}       ${body["password"]}
+    Set Test Variable                          ${ADMINISTRADOR_USUARIO}  ${body["administrador"]}
     Set Test Variable                          ${ID_USUARIO}             ${resposta.json()["_id"]}
     Set Test Variable                          ${RESPOSTA}               ${resposta.json()}
     
@@ -64,3 +67,11 @@ Consultar os dados do novo usuário
     ...                                        expected_status=${status_code_desejado}
     Log                                        ${resposta_consulta.json()}
     Set Test Variable                          ${RESPOSTA_CONSULTA}      ${resposta_consulta.json()}
+
+Validar se os dados do usuário foram exibidos corretamente
+    Log                                        ${RESPOSTA_CONSULTA}
+    Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      nome                      ${NOME_USUARIO}
+    Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      email                     ${EMAIL_TESTE}
+    Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      password                  ${PASSWORD_USUARIO}
+    Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      administrador             ${ADMINISTRADOR_USUARIO}
+    Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      _id                       ${ID_USUARIO}

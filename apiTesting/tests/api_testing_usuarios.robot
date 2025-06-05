@@ -9,4 +9,4 @@ Cenário 01: Cadastrar um novo usuário com sucesso na ServeRest
     [Tags]             criar_usuario
     Criar um usuário novo
     Cadastrar o usuário criado na ServeRest
-    # Validar se o usuárioi foi cadastrado corretamente
+    Validar se o usuário foi cadastrado corretamente

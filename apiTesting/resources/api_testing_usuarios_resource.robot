@@ -79,3 +79,16 @@ Validar se os dados do usuário foram exibidos corretamente
     Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      password                  ${PASSWORD_USUARIO}
     Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      administrador             ${ADMINISTRADOR_USUARIO}
     Dictionary Should Contain Item             ${RESPOSTA_CONSULTA}      _id                       ${ID_USUARIO}
+
+Realizar login com o usuário
+    [Arguments]                                ${status_code_desejado}
+    ${body}                                    Create Dictionary       
+    ...                                        email=${EMAIL_TESTE}    
+    ...                                        password=${PASSWORD_USUARIO}    
+    Log                                        ${body}
+    ${resposta}                                POST On Session
+    ...                                        alias=${ALIAS}
+    ...                                        url=/login
+    ...                                        json=${body}
+    ...                                        expected_status=${status_code_desejado}
+    Log                                        ${resposta.json()}

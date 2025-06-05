@@ -32,10 +32,14 @@ Cadastrar o usuário criado na ServeRest
     ...                                        json=${body}
     ...                                        expected_status=${status_code_desejado}
     Log                                        ${resposta.json()}
+
+    IF    ${resposta.status_code} == 201
+        Set Test Variable                      ${ID_USUARIO}             ${resposta.json()["_id"]}
+    END
+
     Set Test Variable                          ${NOME_USUARIO}           ${body["nome"]}
     Set Test Variable                          ${PASSWORD_USUARIO}       ${body["password"]}
     Set Test Variable                          ${ADMINISTRADOR_USUARIO}  ${body["administrador"]}
-    Set Test Variable                          ${ID_USUARIO}             ${resposta.json()["_id"]}
     Set Test Variable                          ${RESPOSTA}               ${resposta.json()}
     
 Criar Sessão na ServeRest

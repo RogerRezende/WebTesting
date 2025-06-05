@@ -50,3 +50,7 @@ Validar se o usuário foi cadastrado corretamente
 
 Vou repetir o cadastro do usuário
     Cadastrar o usuário criado na ServeRest    email=${EMAIL_TESTE}      status_code_desejado=400
+
+Validar que ocorre uma mensagem de erro ao tentar cadastrar novamente o usuário
+    Log                                        ${RESPOSTA}
+    Dictionary Should Contain Item             ${RESPOSTA}               message                   Este email já está sendo usado

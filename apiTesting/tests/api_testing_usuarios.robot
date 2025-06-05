@@ -17,4 +17,4 @@ Cenário 02: Cadastrar um usuário já existente
     Criar um usuário novo
     Cadastrar o usuário criado na ServeRest    email=${EMAIL_TESTE}    status_code_desejado=201
     Vou repetir o cadastro do usuário
-    # Validar que ocorre uma mensagem de erro ao tentar cadastrar novamente o usuário
+    Validar que ocorre uma mensagem de erro ao tentar cadastrar novamente o usuário

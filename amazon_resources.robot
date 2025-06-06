@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  AllureLibrary
 
 *** Variables ***
 ${BROWSER}                           chrome
@@ -24,7 +25,8 @@ Abrir o navegador
     Maximize Browser Window
 
 Fechar o navegador
-    Capture Page Screenshot
+    Capture Page Screenshot          filename=teste.png
+    Attach File                      teste.png     name=teste    attachment_type=PNG
     Close Browser
 
 # Procedural steps

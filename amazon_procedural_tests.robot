@@ -8,7 +8,7 @@ Test Teardown  Fechar o navegador
 Caso de Teste 01 - Acesso ao menu "Eletrônicos"
     [Documentation]  Esse teste verifica o menu Eletrônicos do site da Amazon.com.br
     ...              e verifica a categoria Computadores e Informática
-    [Tags]           menu  categorias
+    [Tags]           menu    categorias
     Acessar a home page do site amazon.com.br
     Entra no menu "Eletrônicos"
     Verificar se aparece a frase "Eletrônicos e Tecnologia"

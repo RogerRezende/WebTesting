@@ -10,7 +10,7 @@ ${CAMPO_PESQUISA}                    twotabsearchtextbox
 ${BOTAO_PESQUISAR}                   nav-search-submit-button
 ${TITULO_PAGINA_PESQUISAR}           Resultados
 ${TITULO_PDP}                        productTitle
-${BOTAO_ADICIONAR_CARRINHO}          add-to-cart-button-ubb
+${BOTAO_ADICIONAR_CARRINHO}          add-to-cart-button
 ${HEADER_PAGINA_PRODUTO_ADICIONADO}  Adicionado ao carrinho
 ${CARRINHO}                          nav-cart-count
 ${TITULO_PAGINA_CARRINHO}            Carrinho de compras da Amazon.com

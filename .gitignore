@@ -9,3 +9,6 @@ report.html
 
 # ignore all files .png
 *.png
+
+# ignore all files in folder output/allure
+output/allure/
